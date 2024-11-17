@@ -1,0 +1,65 @@
+{
+  "name": "@jhae/stylelint-config-verifier",
+  "description": "A Stylelint configuration tester for Jest that helps you verify your defined rules.",
+  "version": "0.0.0",
+  "main": "./dist/cjs/config-verifier.class.js",
+  "module": "./dist/esm/config-verifier.class.js",
+  "exports": {
+    "types": "./types/config-verifier.class.d.ts",
+    "require": "./dist/cjs/config-verifier.class.js",
+    "default": "./dist/esm/config-verifier.class.js"
+  },
+  "author": {
+    "name": "JHAE",
+    "url": "https://github.com/jhae-de"
+  },
+  "repository": {
+    "url": "https://github.com/jhae-de/stylelint-config-verifier.git",
+    "type": "git"
+  },
+  "homepage": "https://github.com/jhae-de/stylelint-config-verifier",
+  "license": "MIT",
+  "scripts": {
+    "build": "rm -rf ./dist && npm run-script build:cjs && npm run-script build:esm",
+    "build:cjs": "tsc --project tsconfig.cjs.json",
+    "build:esm": "tsc --project tsconfig.esm.json",
+    "build:types": "rm -rf ./types && tsc --project tsconfig.types.json",
+    "lint": "npm run-script lint:prettier && npm run-script lint:eslint",
+    "lint:eslint": "eslint .",
+    "lint:prettier": "prettier . --check",
+    "postbuild": "./bin/post-build.sh",
+    "test": "jest",
+    "test:coverage": "npm run-script test -- --coverage",
+    "test:watch": "npm run-script test -- --watchAll",
+    "test:watch:coverage": "npm run-script test:watch -- --coverage"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.15",
+    "@types/jest": "^29.5",
+    "eslint": "^9.15",
+    "eslint-config-prettier": "^9.1",
+    "eslint-plugin-prettier": "^5.2",
+    "globals": "^15.12",
+    "prettier": "^3.3",
+    "ts-jest": "^29.2",
+    "typescript": "^5.7",
+    "typescript-eslint": "^8.15"
+  },
+  "peerDependencies": {
+    "jest": "^29.0",
+    "stylelint": "^16.0"
+  },
+  "keywords": [
+    "config",
+    "configuration",
+    "jest",
+    "rule",
+    "rules",
+    "stylelint",
+    "stylelint-scss",
+    "stylelintrc",
+    "test",
+    "ts-jest",
+    "verify"
+  ]
+}
