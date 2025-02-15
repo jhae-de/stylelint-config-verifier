@@ -4,8 +4,8 @@ export
 PROJECT_NAME ?= JHAE Stylelint config verifier
 COMPOSE_PROJECT_NAME ?= $(shell echo $(PROJECT_NAME) | sed 's/\(.*\)/\L\1/;s/[^[:alnum:]_-]/-/g')
 
-.DEFAULT_GOAL = help
-TARGET_DESCRIPTION_INDENTATION = 24
+.DEFAULT_GOAL := help
+TARGET_DESCRIPTION_INDENTATION := 24
 
 .PHONY: help
 help: ## Display this help
