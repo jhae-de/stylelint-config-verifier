@@ -22,7 +22,7 @@
   },
   "scripts": {
     "build": "./bin/build.sh",
-    "build:types": "rm -rf ./types && tsc --project tsconfig.types.json",
+    "build:types": "./bin/build-types.sh",
     "lint": "npm run-script lint:prettier && npm run-script lint:eslint",
     "lint:eslint": "eslint .",
     "lint:prettier": "prettier . --check",
