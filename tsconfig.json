@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
-    "rootDir": "./src",
-    "outDir": "./dist",
-    "lib": ["ES2023"],
-    "target": "ES2022",
     "esModuleInterop": true,
-    "moduleResolution": "Node",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "outDir": "./dist",
+    "rootDir": "./src",
     "skipLibCheck": true,
     "strict": true,
-    "stripInternal": true
+    "stripInternal": true,
+    "target": "ESNext"
   },
   "include": ["./src/config-verifier.class.ts"]
 }

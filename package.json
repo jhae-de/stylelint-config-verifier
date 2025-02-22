@@ -13,22 +13,19 @@
     "type": "git"
   },
   "type": "module",
-  "main": "./dist/cjs/config-verifier.class.js",
-  "module": "./dist/esm/config-verifier.class.js",
+  "main": "./dist/cjs/config-verifier.js",
+  "module": "./dist/esm/config-verifier.js",
   "exports": {
-    "types": "./types/config-verifier.class.d.ts",
-    "require": "./dist/cjs/config-verifier.class.js",
-    "default": "./dist/esm/config-verifier.class.js"
+    "types": "./types/config-verifier.d.ts",
+    "require": "./dist/cjs/config-verifier.js",
+    "default": "./dist/esm/config-verifier.js"
   },
   "scripts": {
-    "build": "rm -rf ./dist && npm run-script build:cjs && npm run-script build:esm",
-    "build:cjs": "tsc --project tsconfig.cjs.json",
-    "build:esm": "tsc --project tsconfig.esm.json",
+    "build": "./bin/build.sh",
     "build:types": "rm -rf ./types && tsc --project tsconfig.types.json",
     "lint": "npm run-script lint:prettier && npm run-script lint:eslint",
     "lint:eslint": "eslint .",
     "lint:prettier": "prettier . --check",
-    "postbuild": "./bin/post-build.sh",
     "test": "jest",
     "test:coverage": "npm run-script test -- --coverage",
     "test:watch": "npm run-script test -- --watchAll",
