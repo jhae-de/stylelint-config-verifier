@@ -1,6 +1,5 @@
 import eslint from '@eslint/js';
 import prettier from 'eslint-plugin-prettier/recommended';
-import globals from 'globals';
 import tslint from 'typescript-eslint';
 
 export default tslint.config(
@@ -9,7 +8,6 @@ export default tslint.config(
     ignores: ['dist/**/*', 'types/**/*'],
     languageOptions: {
       ecmaVersion: 2022,
-      globals: globals.node,
       parserOptions: {
         project: 'tsconfig.eslint.json',
       },
