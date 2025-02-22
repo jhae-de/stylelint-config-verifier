@@ -7,11 +7,9 @@ export default tslint.config(
     extends: [eslint.configs.recommended, ...tslint.configs.recommendedTypeChecked, prettier],
     ignores: ['dist/**/*', 'types/**/*'],
     languageOptions: {
-      ecmaVersion: 2022,
       parserOptions: {
         project: 'tsconfig.eslint.json',
       },
-      sourceType: 'module',
     },
   },
   {
