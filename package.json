@@ -2,6 +2,17 @@
   "name": "@jhae/stylelint-config-verifier",
   "description": "A Stylelint configuration tester for Jest that helps you verify your defined rules.",
   "version": "0.0.0",
+  "license": "MIT",
+  "author": {
+    "name": "JHAE",
+    "url": "https://github.com/jhae-de"
+  },
+  "homepage": "https://github.com/jhae-de/stylelint-config-verifier",
+  "repository": {
+    "url": "git+https://github.com/jhae-de/stylelint-config-verifier.git",
+    "type": "git"
+  },
+  "type": "module",
   "main": "./dist/cjs/config-verifier.class.js",
   "module": "./dist/esm/config-verifier.class.js",
   "exports": {
@@ -9,16 +20,6 @@
     "require": "./dist/cjs/config-verifier.class.js",
     "default": "./dist/esm/config-verifier.class.js"
   },
-  "author": {
-    "name": "JHAE",
-    "url": "https://github.com/jhae-de"
-  },
-  "repository": {
-    "url": "https://github.com/jhae-de/stylelint-config-verifier.git",
-    "type": "git"
-  },
-  "homepage": "https://github.com/jhae-de/stylelint-config-verifier",
-  "license": "MIT",
   "scripts": {
     "build": "rm -rf ./dist && npm run-script build:cjs && npm run-script build:esm",
     "build:cjs": "tsc --project tsconfig.cjs.json",
