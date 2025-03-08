@@ -16,7 +16,7 @@
   "main": "./dist/cjs/config-verifier.js",
   "module": "./dist/esm/config-verifier.js",
   "exports": {
-    "types": "./types/config-verifier.d.ts",
+    "types": "./types/index.d.ts",
     "require": "./dist/cjs/config-verifier.js",
     "default": "./dist/esm/config-verifier.js"
   },
