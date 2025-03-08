@@ -35,15 +35,15 @@
     "test:watch:coverage": "npm run-script test:watch -- --coverage"
   },
   "devDependencies": {
-    "@eslint/js": "^9.21",
+    "@eslint/js": "^9.22",
     "@types/jest": "^29.5",
-    "eslint": "^9.21",
-    "eslint-config-prettier": "^10.0",
+    "eslint": "^9.22",
+    "eslint-config-prettier": "^10.1",
     "eslint-plugin-prettier": "^5.2",
     "prettier": "^3.5",
     "ts-jest": "^29.2",
-    "typescript": "^5.7",
-    "typescript-eslint": "^8.24"
+    "typescript": "^5.8",
+    "typescript-eslint": "^8.26"
   },
   "peerDependencies": {
     "jest": "^29.0",
