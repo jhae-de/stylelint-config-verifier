@@ -23,6 +23,9 @@
   "scripts": {
     "build": "./bin/build.sh",
     "build:types": "./bin/build-types.sh",
+    "fix": "npm run-script fix:prettier && npm run-script fix:eslint",
+    "fix:eslint": "eslint --fix .",
+    "fix:prettier": "prettier . --write",
     "lint": "npm run-script lint:prettier && npm run-script lint:eslint",
     "lint:eslint": "eslint .",
     "lint:prettier": "prettier . --check",
