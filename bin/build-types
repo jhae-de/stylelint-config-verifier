@@ -1,0 +1,16 @@
+#!/bin/bash
+
+TYPES_DIR=./types
+
+rm -rf $TYPES_DIR
+
+tsc --project tsconfig.types.json
+mv $TYPES_DIR/config-verifier.class.d.ts $TYPES_DIR/config-verifier.d.ts
+
+cat >$TYPES_DIR/index.d.ts <<EOF
+export type { TestCase, TestCaseExpectation } from './type';
+export { ConfigVerifier } from './config-verifier.d.ts';
+EOF
+
+sed -i "/protected readonly configFile: string;/d" "$TYPES_DIR/config-verifier.d.ts"
+npx prettier $TYPES_DIR --ignore-path=.prettierignore --write
