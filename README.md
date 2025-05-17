@@ -1,7 +1,8 @@
-![Version](https://img.shields.io/npm/v/%40jhae/stylelint-config-verifier?label=Version)
-![License](https://img.shields.io/github/license/jhae-de/stylelint-config-verifier?label=License&color=lightgrey)
-![Tests](https://img.shields.io/github/actions/workflow/status/jhae-de/stylelint-config-verifier/analyze.yaml?label=Tests)
-![Coverage](https://img.shields.io/codecov/c/github/jhae-de/stylelint-config-verifier/main?label=Coverage)
+![Version](https://img.shields.io/npm/v/%40jhae/stylelint-config-verifier?label=Version&labelColor=%23404850&color=blue)
+![License](https://img.shields.io/github/license/jhae-de/stylelint-config-verifier?label=License&labelColor=%23404850&color=blue)
+![Downloads](https://img.shields.io/npm/dt/%40jhae%2Fstylelint-config-verifier?label=Downloads&labelColor=%23404850&color=blue)
+![Tests](https://img.shields.io/github/actions/workflow/status/jhae-de/stylelint-config-verifier/analyze.yaml?label=Tests&labelColor=%23404850)
+![Coverage](https://img.shields.io/codecov/c/github/jhae-de/stylelint-config-verifier/main?label=Coverage&labelColor=%23404850)
 
 # Stylelint Config Verifier
 
