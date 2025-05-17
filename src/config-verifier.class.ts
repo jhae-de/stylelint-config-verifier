@@ -7,7 +7,7 @@ import type { TestCase, TestCaseExpectation } from './type';
  * the expected result. The expected result contains the expected error status, messages, and severities.
  *
  * @example
- * ```typescript
+ * ```javascript
  * new ConfigVerifier().verify(
  *   'at-rule-disallowed-list',
  *   {
@@ -24,7 +24,7 @@ import type { TestCase, TestCaseExpectation } from './type';
  *     code: '@use "test.scss";',
  *   },
  * );
- * ``
+ * ```
  */
 export class ConfigVerifier {
   /**
@@ -45,15 +45,15 @@ export class ConfigVerifier {
   /**
    * Creates a new `ConfigVerifier` object.
    *
-   * @param {string} configFile The path to the Stylelint config file whose rules should be verified
+   * @param {string} configFile - The path to the Stylelint config file whose rules should be verified
    */
   public constructor(protected readonly configFile: string = '.stylelintrc.yaml') {}
 
   /**
    * Verifies a rule configuration.
    *
-   * @param {string} ruleName The name of the rule
-   * @param {TestCase[]} testCases The test cases
+   * @param {string} ruleName - The name of the rule
+   * @param {TestCase[]} testCases - The test cases
    */
   public verify(ruleName: string, ...testCases: TestCase[]): void {
     describe(`Rule '${ruleName}'`, (): void => {
@@ -75,9 +75,11 @@ export class ConfigVerifier {
    *
    * @internal
    *
-   * @param {TestCase} testCase The test case
+   * @param {TestCase} testCase - The test case
    *
-   * @return {Promise<LinterResult>}
+   * @returns {Promise<LinterResult>} A Promise that resolves to the linter result
+   *
+   * @throws {Error} If both `file` and `code` are defined or undefined
    */
   protected getLinterResult({ file, code }: TestCase): Promise<LinterResult> {
     if ([file, code].filter((value: string | undefined): boolean => value === undefined).length !== 1) {
@@ -96,10 +98,10 @@ export class ConfigVerifier {
    *
    * @internal
    *
-   * @param {string} ruleName The name of the rule
-   * @param {LinterResult} linterResult The linter result
+   * @param {string} ruleName - The name of the rule
+   * @param {LinterResult} linterResult - The linter result
    *
-   * @return {Warning[]}
+   * @returns {Warning[]} The warnings for the rule
    */
   protected getWarnings(ruleName: string, { results: lintResults }: LinterResult): Warning[] {
     return lintResults
@@ -113,9 +115,9 @@ export class ConfigVerifier {
    *
    * @internal
    *
-   * @param {Warning[]} warnings The lint warnings
+   * @param {Warning[]} warnings - The lint warnings
    *
-   * @return {boolean}
+   * @returns {boolean} True if the warnings contain an error, otherwise false
    */
   protected getErrored(warnings: Warning[]): boolean {
     return this.getSeverities(warnings).some((severity: Severity): boolean => severity === 'error');
@@ -126,9 +128,9 @@ export class ConfigVerifier {
    *
    * @internal
    *
-   * @param {Warning[]} warnings The lint warnings
+   * @param {Warning[]} warnings - The lint warnings
    *
-   * @return {string[]}
+   * @returns {string[]} The messages of the warnings
    */
   protected getMessages(warnings: Warning[]): string[] {
     return warnings.map(({ text }: Warning): string => text);
@@ -139,9 +141,9 @@ export class ConfigVerifier {
    *
    * @internal
    *
-   * @param {Warning[]} warnings The lint warnings
+   * @param {Warning[]} warnings - The lint warnings
    *
-   * @return {Severity[]}
+   * @returns {Severity[]} The severities of the warnings
    */
   protected getSeverities(warnings: Warning[]): Severity[] {
     return warnings.map(({ severity }: Warning): Severity => severity);

@@ -6,7 +6,7 @@ import type { TestCase } from './type';
  * the expected result. The expected result contains the expected error status, messages, and severities.
  *
  * @example
- * ```typescript
+ * ```javascript
  * new ConfigVerifier().verify(
  *   'at-rule-disallowed-list',
  *   {
@@ -29,15 +29,15 @@ export declare class ConfigVerifier {
   /**
    * Creates a new `ConfigVerifier` object.
    *
-   * @param {string} configFile The path to the Stylelint config file whose rules should be verified
+   * @param {string} configFile - The path to the Stylelint config file whose rules should be verified
    */
   constructor(configFile?: string);
 
   /**
    * Verifies a rule configuration.
    *
-   * @param {string} ruleName The name of the rule
-   * @param {TestCase[]} testCases The test cases
+   * @param {string} ruleName - The name of the rule
+   * @param {TestCase[]} testCases - The test cases
    */
   verify(ruleName: string, ...testCases: TestCase[]): void;
 }
