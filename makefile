@@ -32,6 +32,10 @@ app-bash: start ## Access the app container
 app-build: start ## Build the app
 	@docker compose exec app bash -c 'npm run-script build'
 
+.PHONY: app-build-types
+app-build-types: start ## Create the type declarations
+	@docker compose exec app bash -c 'npm run-script build:types'
+
 .PHONY: app-fix
 app-fix: start ## Automatically fix, where possible, problems in the source code
 	@docker compose exec app bash -c 'npm run-script fix'
@@ -63,10 +67,6 @@ app-test-watch: start ## Run tests and watch file changes
 .PHONY: app-test-watch-coverage
 app-test-watch-coverage: start ## Run tests with coverage report and watch file changes
 	@docker compose exec app bash -c 'npm run-script test:watch:coverage'
-
-.PHONY: app-types
-app-types: start ## Create the type declarations
-	@docker compose exec app bash -c 'npm run-script build:types'
 
 # DOCKER TARGETS
 .PHONY: docker-destroy

@@ -21,8 +21,9 @@
     "default": "./dist/esm/config-verifier.js"
   },
   "scripts": {
-    "build": "./bin/build.sh",
-    "build:types": "./bin/build-types.sh",
+    "build": "npm run-script build:dist && npm run-script build:types",
+    "build:dist": "./bin/build-dist",
+    "build:types": "./bin/build-types",
     "fix": "npm run-script fix:prettier && npm run-script fix:eslint",
     "fix:eslint": "eslint --fix .",
     "fix:prettier": "prettier . --write",
