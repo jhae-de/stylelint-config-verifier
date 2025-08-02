@@ -13,4 +13,4 @@ export { ConfigVerifier } from './config-verifier.d.ts';
 EOF
 
 sed -i "/protected readonly configFile: string;/d" "$TYPES_DIR/config-verifier.d.ts"
-npx prettier $TYPES_DIR --ignore-path=.prettierignore --write
+npx prettier $TYPES_DIR --ignore-path=/dev/null --log-level=silent --write
