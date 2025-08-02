@@ -49,7 +49,7 @@ app-lint: start ## Run linters
 	@docker compose exec app bash -c 'npm run-script lint'
 
 .PHONY: app-pack
-app-pack: app-build ## Create a tarball from the app
+app-pack: start ## Create a tarball from the app
 	@docker compose exec app bash -c 'npm pack'
 
 .PHONY: app-test
