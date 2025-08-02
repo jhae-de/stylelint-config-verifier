@@ -97,20 +97,19 @@ Example Stylelint configuration file:
 
 ```yaml
 rules:
-  at-rule-disallowed-list:
-    - import
+  at-rule-disallowed-list: null
 
 overrides:
   - files:
-      - '*.css'
-      - '**/*.css'
+      - '**/*.scss'
     rules:
-      at-rule-disallowed-list: null
+      at-rule-disallowed-list:
+        - import
 ```
 
-The CSS file, for example `at-rule-disallowed-list.css`:
+The SCSS file, for example `at-rule-disallowed-list.scss`:
 
-```css
+```scss
 @import 'test.css';
 ```
 
@@ -120,10 +119,16 @@ Verifying the `at-rule-disallowed-list` rule configuration:
 import { ConfigVerifier } from '@jhae/stylelint-config-verifier';
 
 new ConfigVerifier().verify('at-rule-disallowed-list', {
-  name: 'Allow @import rule in CSS files',
+  name: 'Disallow @import rule in SCSS files',
 
   // Pass the file instead of inline code.
-  file: 'at-rule-disallowed-list.css',
+  file: 'at-rule-disallowed-list.scss',
+
+  expect: {
+    errored: true,
+    messages: ['Unexpected at-rule "@import"'],
+    severities: ['error'],
+  },
 });
 ```
 
