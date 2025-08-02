@@ -149,3 +149,5 @@ export class ConfigVerifier {
     return warnings.map(({ severity }: Warning): Severity => severity);
   }
 }
+
+export default ConfigVerifier;
