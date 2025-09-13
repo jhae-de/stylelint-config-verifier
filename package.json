@@ -21,6 +21,10 @@
     "require": "./dist/cjs/config-verifier.js",
     "default": "./dist/esm/config-verifier.js"
   },
+  "files": [
+    "./dist/",
+    "./types/"
+  ],
   "scripts": {
     "build": "npm run-script build:package && npm run-script build:types",
     "build:package": "./bin/build-package",
