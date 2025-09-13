@@ -7,7 +7,7 @@ jest.mock('stylelint');
 
 describe('ConfigVerifier class', (): void => {
   test('Constructor', (): void => {
-    expect(new ConfigVerifier()['configFile']).toBe('.stylelintrc.yaml');
+    expect(new ConfigVerifier()['configFile']).toBeUndefined();
     expect(new ConfigVerifier('stylelint.config.js')['configFile']).toBe('stylelint.config.js');
   });
 });
