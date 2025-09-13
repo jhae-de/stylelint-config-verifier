@@ -134,8 +134,9 @@ new ConfigVerifier().verify('at-rule-disallowed-list', {
 
 ### Specifying the Stylelint configuration file
 
-By default, the config verifier looks for a `.stylelintrc.yaml` configuration file. If a different location or file name
-is used, the path to it can be specified as a constructor argument.
+By default, the Stylelint configuration file is detected automatically as described in
+the [Stylelint documentation](https://stylelint.io/user-guide/configure). If needed, you can override this behavior by
+passing the path to the configuration file to the constructor.
 
 ```javascript
 import { ConfigVerifier } from '@jhae/stylelint-config-verifier';

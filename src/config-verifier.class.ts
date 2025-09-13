@@ -45,9 +45,9 @@ export class ConfigVerifier {
   /**
    * Creates a new `ConfigVerifier` object.
    *
-   * @param {string} configFile - The path to the Stylelint config file whose rules should be verified
+   * @param {string | undefined} configFile - The path to the Stylelint config file whose rules should be verified
    */
-  public constructor(protected readonly configFile: string = '.stylelintrc.yaml') {}
+  public constructor(protected readonly configFile?: string) {}
 
   /**
    * Verifies a rule configuration.
