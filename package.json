@@ -13,13 +13,9 @@
     "type": "git"
   },
   "type": "module",
-  "main": "./dist/cjs/config-verifier.js",
-  "module": "./dist/esm/config-verifier.js",
-  "types": "./types/index.d.ts",
   "exports": {
     "types": "./types/index.d.ts",
-    "require": "./dist/cjs/config-verifier.js",
-    "default": "./dist/esm/config-verifier.js"
+    "default": "./dist/config-verifier.js"
   },
   "files": [
     "./dist/",

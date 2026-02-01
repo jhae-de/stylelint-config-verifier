@@ -15,6 +15,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 - Support for Stylelint 16
 - Support for Node.js versions less than 20
+- CommonJS support
 
 ## [1.4.0] - 2025-09-13
 

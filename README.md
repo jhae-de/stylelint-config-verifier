@@ -144,14 +144,6 @@ import { ConfigVerifier } from '@jhae/stylelint-config-verifier';
 new ConfigVerifier('path/to/stylelint.config.js').verify();
 ```
 
-### Importing into CommonJS
-
-```javascript
-const { ConfigVerifier } = require('@jhae/stylelint-config-verifier');
-
-new ConfigVerifier().verify();
-```
-
 ---
 
 Check out the [Standard SCSS Stylelint Config](https://github.com/jhae-de/stylelint-config-standard-scss) tests for more
