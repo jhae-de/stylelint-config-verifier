@@ -14,6 +14,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Removed
 
 - Support for Stylelint 16
+- Support for Node.js versions less than 20
 
 ## [1.4.0] - 2025-09-13
 
