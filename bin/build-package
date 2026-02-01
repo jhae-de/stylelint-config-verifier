@@ -4,20 +4,7 @@ DIST_DIR=./dist
 
 rm -rf $DIST_DIR
 
-tsc --project tsconfig.cjs.json
-mv $DIST_DIR/cjs/config-verifier.class.js $DIST_DIR/cjs/config-verifier.js
-cat >$DIST_DIR/cjs/package.json <<EOF
-{
-  "type": "commonjs"
-}
-EOF
+tsc
+mv $DIST_DIR/config-verifier.class.js $DIST_DIR/config-verifier.js
 
-tsc --project tsconfig.esm.json
-mv $DIST_DIR/esm/config-verifier.class.js $DIST_DIR/esm/config-verifier.js
-cat >$DIST_DIR/esm/package.json <<EOF
-{
-  "type": "module"
-}
-EOF
-
-rm -rf $DIST_DIR/{cjs,esm}/type
+rm -rf $DIST_DIR/type
