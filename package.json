@@ -49,13 +49,13 @@
     "eslint-plugin-prettier": "^5.1",
     "jest": "^30.0",
     "prettier": "^3.0",
-    "stylelint": "^16.0",
+    "stylelint": "^17.0",
     "ts-jest": "^29.2",
     "typescript": "^5.0",
     "typescript-eslint": "^8.42"
   },
   "peerDependencies": {
-    "stylelint": "^16.0"
+    "stylelint": "^17.0"
   },
   "keywords": [
     "config",
