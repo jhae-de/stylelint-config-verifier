@@ -1,9 +1,13 @@
-import stylelint, { LinterResult } from 'stylelint';
+import { jest } from '@jest/globals';
+import stylelint, { type LinterOptions, type LinterResult, type LintResult } from 'stylelint';
 import { ConfigVerifier } from './config-verifier.class';
-import mocked = jest.mocked;
-import ResolvedValue = jest.ResolvedValue;
 
-jest.mock('stylelint');
+jest.mock('stylelint', (): unknown => ({
+  __esModule: true,
+  default: {
+    lint: jest.fn<(options: LinterOptions) => Promise<LinterResult>>(),
+  },
+}));
 
 describe('ConfigVerifier class', (): void => {
   test('Constructor', (): void => {
@@ -40,7 +44,7 @@ describe('ConfigVerifier class', (): void => {
 
 describe('ConfigVerifier class', (): void => {
   beforeEach((): void => {
-    mocked(stylelint.lint).mockResolvedValue({
+    jest.mocked(stylelint.lint).mockResolvedValue({
       results: [
         {
           warnings: [
@@ -52,7 +56,7 @@ describe('ConfigVerifier class', (): void => {
           ],
         },
       ],
-    } as ResolvedValue<LinterResult>);
+    } as LinterResult);
   });
 
   new ConfigVerifier().verify('_rule_name_', {
@@ -68,7 +72,7 @@ describe('ConfigVerifier class', (): void => {
 
 describe('ConfigVerifier class', (): void => {
   beforeEach((): void => {
-    mocked(stylelint.lint).mockResolvedValue({
+    jest.mocked(stylelint.lint).mockResolvedValue({
       results: [
         {
           warnings: [
@@ -80,7 +84,7 @@ describe('ConfigVerifier class', (): void => {
           ],
         },
       ],
-    } as ResolvedValue<LinterResult>);
+    } as LinterResult);
   });
 
   new ConfigVerifier().verify('_rule_name_', {
@@ -96,9 +100,9 @@ describe('ConfigVerifier class', (): void => {
 
 describe('ConfigVerifier class', (): void => {
   beforeEach((): void => {
-    mocked(stylelint.lint).mockResolvedValue({
-      results: [],
-    } as ResolvedValue<LinterResult>);
+    jest.mocked(stylelint.lint).mockResolvedValue({
+      results: [] as LintResult[],
+    } as LinterResult);
   });
 
   new ConfigVerifier().verify('_rule_name_', {
