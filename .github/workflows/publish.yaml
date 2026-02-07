@@ -6,10 +6,6 @@ on:
     types:
       - published
 
-permissions:
-  id-token: write
-  contents: read
-
 jobs:
   publish:
     name: Publish
@@ -17,3 +13,7 @@ jobs:
     with:
       node-version: 24
       package-version: ${{ github.ref_name }}
+
+permissions:
+  id-token: write
+  contents: read
