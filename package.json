@@ -42,20 +42,27 @@
     "test:watch:coverage": "npm run-script test:watch -- --coverage"
   },
   "devDependencies": {
-    "@eslint/js": "^9.0",
+    "@eslint/js": "^10.0",
     "@types/jest": "^30.0",
-    "eslint": "^9.0",
+    "eslint": "^10.0",
     "eslint-config-prettier": "^10.0",
     "eslint-plugin-prettier": "^5.1",
     "jest": "^30.0",
     "prettier": "^3.0",
     "stylelint": "^16.0",
     "ts-jest": "^29.2",
-    "typescript": "^5.0",
+    "typescript": "^6.0",
     "typescript-eslint": "^8.42"
   },
   "peerDependencies": {
-    "stylelint": "^16.0"
+    "jest": "^29.0 || ^30.0",
+    "stylelint": "^16.0",
+    "typescript": "^5.0 || ^6.0"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
   },
   "keywords": [
     "config",

@@ -1,15 +1,10 @@
 {
   "compilerOptions": {
     "esModuleInterop": true,
-    "lib": ["ESNext"],
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
     "outDir": "./dist",
     "rootDir": "./src",
     "skipLibCheck": true,
-    "strict": true,
-    "stripInternal": true,
-    "target": "ESNext"
+    "stripInternal": true
   },
   "include": ["./src/config-verifier.class.ts"]
 }
