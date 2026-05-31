@@ -1,3 +1,4 @@
+import { describe, expect, test } from '@jest/globals';
 import stylelint, { type LinterResult, type LintResult, type Severity, type Warning } from 'stylelint';
 import type { TestCase, TestCaseExpectation } from './type';
 
