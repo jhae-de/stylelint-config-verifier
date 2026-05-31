@@ -1,4 +1,4 @@
-import { jest } from '@jest/globals';
+import { beforeEach, describe, expect, jest, test } from '@jest/globals';
 import stylelint, { type LinterOptions, type LinterResult, type LintResult } from 'stylelint';
 import { ConfigVerifier } from './config-verifier.class';
 
