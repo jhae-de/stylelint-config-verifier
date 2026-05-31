@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0) and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.0] - 2026-06-06
+
+### Added
+
+- Support for TypeScript 6
+
+### Removed
+
+- Support for TypeScript 4 and below
+- Support for Jest 28 and below
+
 ## [2.0.0] - 2026-02-01
 
 ### Added
@@ -49,7 +60,8 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 Initial release
 
-[Unreleased]: https://github.com/jhae-de/stylelint-config-verifier/compare/v2.0.0...main
+[Unreleased]: https://github.com/jhae-de/stylelint-config-verifier/compare/v2.1.0...main
+[2.1.0]: https://github.com/jhae-de/stylelint-config-verifier/releases/tag/v2.1.0
 [2.0.0]: https://github.com/jhae-de/stylelint-config-verifier/releases/tag/v2.0.0
 [1.4.0]: https://github.com/jhae-de/stylelint-config-verifier/releases/tag/v1.4.0
 [1.3.0]: https://github.com/jhae-de/stylelint-config-verifier/releases/tag/v1.3.0
